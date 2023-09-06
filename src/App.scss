@@ -1,0 +1,94 @@
+// für animierten Übergang, z.B. von Farbenwechsel
+@mixin transition ($x) {
+    -webkit-transition: $x 1000ms linear;
+    -ms-transition: $x 1000ms linear;
+    transition: $x 1000ms linear;
+}
+
+.App {
+    text-align: center;
+    width: 40%;
+    min-width: 300px;
+    max-width: 600px;
+    padding: 20px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 1px 1px black;
+
+    // damit Element genau in der Mitte liegt (horizontal und vertikal)
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    // damit deswegen nicht mehr unscharf ist
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: translate3d(-50%, -50%, 0) scale(2, 2); 
+    zoom: 0.5;  
+    background-color: white;
+    border-radius: 10px;
+}
+
+body {
+    @include transition(background-color);
+}
+
+#new-quote {
+    @include transition(background-color);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    mix-blend-mode: darken;
+    font-size: 1rem;
+    font-weight: 500; 
+    position: relative;
+    float: right;
+    border: none;
+    cursor: pointer;
+}
+
+#text {
+    font-size: 1.75rem;
+    font-weight: 400;
+    display: inline;
+    @include transition(color);
+}
+
+.quotes {
+    margin: 20px 10px;
+    position: relative;
+    bottom: 10px;
+    @include transition(color);
+}
+
+#author {
+    @include transition(color);
+    mix-blend-mode: multiply;
+    position: relative;
+    text-align: right;
+    margin: 0 30px 30px 0;
+    font-size: 1rem;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    float: left;
+    color: white;
+}
+
+.twitter-share-button {
+    @include transition(background-color);
+    padding: 10px;
+    height: inherit;
+    border-radius: 3px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+}
