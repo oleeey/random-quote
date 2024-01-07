@@ -9,10 +9,9 @@ Webseite, welche ein zufälliges Zitat darstellt.
 ## Benutze Werkzeuge:
 - HTML
 - CSS/SCSS
-- JavaScript
-- React
+- JavaScript/React
+  
 
 
-## TODO:
-- Übergang zwischen Zitaten animieren
+
 
